@@ -53,12 +53,13 @@ function drawRect(x, y, w, h, depth) {
 function drawInfoBox() {
   fill(200, 200);
   noStroke();
-  rect(10, height - 60, 150, 50, 5);
+  rect(10, height - 65, 170, 50, 5);
 
   fill(0);
   textSize(16);
   textAlign(LEFT, CENTER);
-  text('Press S to save', 20, height - 35);
+  text('Left Click to generate', 20, height - 50);
+  text('Press S to save', 20, height - 30);
 }
 
 let saving = false;
@@ -66,8 +67,13 @@ let saving = false;
 function keyPressed() {
   if (key === 's' || key === 'S') {
     saving = true;
+
+    const currentWidth = width;
+    const currentHeight = height;
+    resizeCanvas(currentWidth, currentHeight - 65);
     redraw();
     saveCanvas(`mondrian-${Math.floor(Math.random() * 1000000)}`, 'png');
+    resizeCanvas(currentWidth, currentHeight);
     saving = false;
     redraw();
   }
