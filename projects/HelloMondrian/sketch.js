@@ -1,3 +1,6 @@
+// Source: https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.youtube.com/watch%3Fv%3DqVVI8o-RNFY&ved=2ahUKEwj1jtCZyPSJAxXmVPEDHZOAMt8QwqsBegQIDxAF&usg=AOvVaw0AjfwLbsPZEwprloU1ihNR
+// I added saving functionality and some minor optimizations
+
 let colors;
 let seed;
 let vh = true;
@@ -76,6 +79,11 @@ function keyPressed() {
     resizeCanvas(currentWidth, currentHeight);
     saving = false;
     redraw();
+  }
+
+  if (key === 'c' || key === 'C') {
+    // show code
+    window.location.href = 'http://127.0.0.1:5500/projects/HelloMondrian/sketch.js';
   }
 }
 

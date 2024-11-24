@@ -284,6 +284,42 @@
         color: inherit;
       }
 
+      .menu {
+        display: flex;
+        align-items: center;
+        position: relative;
+        margin: 0;
+        padding-right: 25px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .menu a {
+        position: relative;
+        text-decoration: none;
+        padding: 8px 15px;
+        margin-right: 10px;
+        transition: all 0.3s ease;
+      }
+
+      .menu a:hover {
+        border-radius: 4px;
+        transform: translateY(-1px);
+      }
+
+      /* Media query for responsive design */
+      @media screen and (max-width: 768px) {
+        .menu {
+          flex-direction: column;
+          padding-right: 25px;
+        }
+
+        .menu a {
+          width: 100%;
+          margin: 5px 0;
+          text-align: center;
+        }
+      }
+
       ::-webkit-scrollbar {
         width: 10px;
       }
@@ -318,6 +354,10 @@
             <sub class="subscript">by Murat Koptur</sub>
           </h1>
         </a>
+      </div>
+      <div class="menu">
+        <a href="https://github.com/mrtkp9993/genart" target="_blank">GitHub</a>
+        <a href="https://muratkoptur.com/" target="_blank">Main Site</a>
       </div>
     </nav>
     <div class="container">
